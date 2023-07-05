@@ -1,3 +1,4 @@
+import 'package:custom_widgets/widgets/animated_progress.dart';
 import 'package:flutter/material.dart';
 
 import 'painted_widgets/circle_progress.dart';
@@ -45,13 +46,7 @@ class _HomeContent extends StatelessWidget {
             const SizedBox(height: 15),
             const CustomLoading(size: 100),
             const SizedBox(height: 15),
-            const CircleProgress(
-              progressColor: Colors.red,
-              outerColor: Colors.grey,
-              showPercentual: true,
-              radius: 50,
-              currentProgress: 65,
-            ),
+            const AnimatedProgress(maxProgress: 65),
             const SizedBox(height: 15),
             SizedBox(
               width: 200,
