@@ -1,7 +1,6 @@
 import 'package:custom_widgets/widgets/animated_progress.dart';
 import 'package:flutter/material.dart';
 
-import 'painted_widgets/circle_progress.dart';
 import 'painted_widgets/custom_loading.dart';
 import 'widgets/dots_list.dart';
 import 'widgets/left_menu.dart';
@@ -44,7 +43,7 @@ class _HomeContent extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            const CustomLoading(size: 100),
+            const CustomLoading(size: 50),
             const SizedBox(height: 15),
             const AnimatedProgress(maxProgress: 65),
             const SizedBox(height: 15),

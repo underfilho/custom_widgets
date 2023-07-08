@@ -70,6 +70,7 @@ class _LoadingPainter extends CustomPainter {
     final pen = Paint()
       ..strokeWidth = 3
       ..color = color
+      ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
     canvas.translate(size.width / 2, size.height / 2);
@@ -78,14 +79,14 @@ class _LoadingPainter extends CustomPainter {
       final position = Offset(math.sin(angle), -math.cos(angle));
 
       canvas.drawLine(
-        position * radius / 1.75,
+        position * radius / 1.5,
         position * radius,
-        pen.withOpacity(opacityFunction(i - initial)),
+        pen.withOpacity(_opacityFunction(i - initial)),
       );
     }
   }
 
-  double opacityFunction(int x) => .05 + (2 / (1 + math.exp(0.5 * x))) * 0.95;
+  double _opacityFunction(int x) => .05 + (2 / (1 + math.exp(0.5 * x))) * 0.95;
 
   @override
   bool shouldRepaint(_LoadingPainter oldDelegate) =>
@@ -97,6 +98,7 @@ extension _MyPaint on Paint {
     return Paint()
       ..strokeWidth = strokeWidth
       ..style = style
+      ..strokeCap = strokeCap
       ..color = color.withOpacity(opacity);
   }
 }
